@@ -4,6 +4,8 @@
 
 ### Hybrid Memory Updating and Region-Aware Memory for Video Polyp Segmentation
 
+</div>
+
 <p align="center">
   <img src="assets/motivation.png" width="900" alt="Motivation for HyRAM-VPS">
 </p>
