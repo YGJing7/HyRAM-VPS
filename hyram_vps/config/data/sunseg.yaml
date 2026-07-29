@@ -1,0 +1,11 @@
+main_training:
+  num_iterations: 50000
+  lr_schedule_steps: [40000, 47500]
+
+vos_datasets:
+  base: /mnt/b33c377d-a988-494e-860f-8149fffe7254/yangguojing/data/SUN-SEG
+  SUNSEG_TRAIN:
+    image_directory: TrainDataset/Frame
+    mask_directory: TrainDataset/GT
+    multiplier: 1
+    frame_interval: 1

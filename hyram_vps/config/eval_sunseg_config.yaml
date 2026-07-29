@@ -1,0 +1,95 @@
+defaults:
+  - _self_
+  - model: base
+  - override hydra/job_logging: custom-no-rank.yaml
+
+hydra:
+  run:
+    dir: ./output/sunseg_test/${dataset}
+  output_subdir: ${now:%Y-%m-%d_%H-%M-%S}-hydra
+
+exp_id: sunseg
+data_root: /mnt/b33c377d-a988-494e-860f-8149fffe7254/yangguojing/data/SUN-SEG
+dataset: sunseg-easy-seen
+weights: null
+output_dir: null
+amp: true
+flip_aug: false
+
+max_internal_size: -1
+image_directory: null
+mask_directory: null
+json_directory: null
+size: null
+save_all: null
+use_all_masks: null
+use_long_term: null
+mem_every: null
+
+max_mem_frames: 5
+long_term:
+  count_usage: true
+  max_mem_frames: 10
+  min_mem_frames: 5
+  num_prototypes: 128
+  max_num_tokens: 10000
+  buffer_tokens: 2000
+
+top_k: 30
+stagger_updates: 5
+chunk_size: -1
+save_scores: false
+save_soft_scores: false
+save_aux: false
+save_attention: false
+save_region_summary: false
+region_summary_object: 1
+region_summary_alpha: 0.65
+region_summary_max_frames: -1
+attention_head: -1
+attention_object: 1
+attention_alpha: 0.65
+attention_max_frames: -1
+visualize: false
+
+datasets:
+  sunseg-train:
+    image_directory: ${data_root}/TrainDataset/Frame
+    mask_directory: ${data_root}/TrainDataset/GT
+    size: -1
+    save_all: true
+    use_all_masks: false
+    use_long_term: true
+    mem_every: 5
+  sunseg-easy-seen:
+    image_directory: ${data_root}/TestEasyDataset/Seen/Frame
+    mask_directory: ${data_root}/TestEasyDataset/Seen/GT
+    size: -1
+    save_all: true
+    use_all_masks: false
+    use_long_term: true
+    mem_every: 5
+  sunseg-easy-unseen:
+    image_directory: ${data_root}/TestEasyDataset/Unseen/Frame
+    mask_directory: ${data_root}/TestEasyDataset/Unseen/GT
+    size: -1
+    save_all: true
+    use_all_masks: false
+    use_long_term: true
+    mem_every: 5
+  sunseg-hard-seen:
+    image_directory: ${data_root}/TestHardDataset/Seen/Frame
+    mask_directory: ${data_root}/TestHardDataset/Seen/GT
+    size: -1
+    save_all: true
+    use_all_masks: false
+    use_long_term: true
+    mem_every: 5
+  sunseg-hard-unseen:
+    image_directory: ${data_root}/TestHardDataset/Unseen/Frame
+    mask_directory: ${data_root}/TestHardDataset/Unseen/GT
+    size: -1
+    save_all: true
+    use_all_masks: false
+    use_long_term: true
+    mem_every: 5
