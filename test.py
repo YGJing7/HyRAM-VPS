@@ -23,7 +23,7 @@ log = logging.getLogger()
 
 
 @torch.inference_mode()
-@hydra.main(version_base='1.3.2', config_path='config', config_name='eval_sunseg_config.yaml')
+@hydra.main(version_base='1.3.2', config_path='hyram_vps/config', config_name='eval_sunseg_config.yaml')
 def eval_vos(cfg: DictConfig):
     if cfg['output_dir'] is not None:
         run_dir = cfg['output_dir']

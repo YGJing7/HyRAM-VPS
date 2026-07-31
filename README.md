@@ -124,6 +124,12 @@ done
 python evaluator.py --splits all --n_workers 0
 ```
 
+### Well trained model:
+
+You can download our [checkpoint](https://drive.google.com/drive/folders/1vv8t-_6pRtel_XLzWjGKdy-so27Vrbah?usp=drive_link).
+
+The predition maps of HyRAM-VPS can be downloaded via this [link](https://drive.google.com/drive/folders/1vv8t-_6pRtel_XLzWjGKdy-so27Vrbah?usp=drive_link).
+
 # Acknowledgement
 
 Our work builds upon the excellent foundational research of [PNS+](https://github.com/GewelsJI/VPS) and [Cutie](https://github.com/hkchengrex/Cutie). We thank the authors for their awesome works and publicly available codes.
