@@ -87,19 +87,7 @@ python scripts/data/check_sunseg.py --root /path/to/SUN-SEG
 ### Training
 
 ```bash
-torchrun --nproc_per_node=1 train.py \
-  --config-name train_sunseg_config.yaml \
-  exp_id=sunseg \
-  main_training.num_iterations=50000 \
-  main_training.learning_rate=1e-4 \
-  main_training.seq_length=8 \
-  main_training.num_ref_frames=3 \
-  main_training.batch_size=1 \
-  main_training.crop_size=[480,480] \
-  main_training.train_num_points=12544 \
-  main_training.gt_memory_start_prob=0.7 \
-  main_training.gt_memory_end_prob=0.2 \
-  main_training.gt_memory_decay_iters=30000
+python train.py
 ```
 
 ### Testing
