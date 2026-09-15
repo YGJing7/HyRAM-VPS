@@ -91,7 +91,7 @@ torchrun --nproc_per_node=1 train.py \
   --config-name train_sunseg_config.yaml \
   exp_id=sunseg \
   main_training.num_iterations=50000 \
-  main_training.learning_rate=5e-5 \
+  main_training.learning_rate=1e-4 \
   main_training.seq_length=8 \
   main_training.num_ref_frames=3 \
   main_training.batch_size=1 \
@@ -113,7 +113,7 @@ do
     weights=output/sunseg/sunseg_main_training_last.pth \
     dataset=$split \
     size=480 \
-    mem_every=10 \
+    mem_every=5 \
     output_dir=output/$split
 done
 ```
